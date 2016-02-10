@@ -44,7 +44,7 @@ function commit {
   cd $1
   git add .
   #git rm .
-  git commit -m $2
+  git commit -m "$2"
   p Done!
 }
 
@@ -64,7 +64,7 @@ p
 p "$message"
 p
 p
-commit $workspace/FCC-Wiki-Scripts $message
+commit $workspace/FCC-Wiki-Scripts "$message"
 p "Done commititng, time to push!"
 push
 # Keep the windows Open until I press a key
