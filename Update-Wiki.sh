@@ -60,28 +60,29 @@ function push {
   git push
 }
 
-echo "FreeCodeCamp Wiki updater v1"
-echo
-echo "Move to Local Wiki directory at " + $workspace$local_wiki
+p "FreeCodeCamp Wiki updater v1"
+p
+p "Move to Local Wiki directory at " + $workspace$local_wiki
 cd $workspace$local_wiki
-echo
-echo "Updating local repository..."
+p
+p "Updating local repository..."
 update
 status
-echo
-p Done!
-echo "Going to the live Wiki ..."
+p
+p "Done!"
+p "Going to the live Wiki ..."
 cd $workspace$live_wiki
-echo
-echo "Update live wiki..."
+p
+p "Update live wiki..."
 updateLive $workspace$live_wiki $up $down
 status
-echo
+p
 
 commit $workspace/FCC-Wiki-Scripts $message
-p "Testign a couple of things."
+p "Done commititng, time to push!"
+push
 # Keep the windows Open until I press a key
-echo "Press any key to close this windows..."
+p "Press any key to close this windows..."
 #read -n 1 -s
 sleep 5
 exit 0
