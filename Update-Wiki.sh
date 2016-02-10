@@ -61,7 +61,7 @@ function push {
 }
 
 p
-p $message
+p "$message"
 p
 p
 commit $workspace/FCC-Wiki-Scripts $message
