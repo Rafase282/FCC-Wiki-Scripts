@@ -60,22 +60,6 @@ function push {
   git push
 }
 
-p "FreeCodeCamp Wiki updater v1"
-p
-p "Move to Local Wiki directory at " + $workspace$local_wiki
-cd $workspace$local_wiki
-p
-p "Updating local repository..."
-update
-status
-p
-p "Done!"
-p "Going to the live Wiki ..."
-cd $workspace$live_wiki
-p
-p "Update live wiki..."
-updateLive $workspace$live_wiki $up $down
-status
 p
 p $message
 commit $workspace/FCC-Wiki-Scripts $message
