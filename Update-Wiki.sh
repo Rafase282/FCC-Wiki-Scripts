@@ -43,7 +43,7 @@ function status {
 function commit {
   cd $1
   git add .
-  git rm .
+  #git rm .
   git commit -m $2
   p Done!
 }
