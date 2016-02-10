@@ -61,10 +61,31 @@ function push {
 }
 
 p
-p "$message"
+p
+p "FreeCodeCamp Wiki updater v1"
+p
+p "Move to Local Wiki directory at " + $workspace$local_wiki
+cd $workspace$local_wiki
+p
+p "Updating local repository..."
 p
 p
+update
+status
+p
+p "Done!"
+p "Going to the live Wiki ..."
+cd $workspace$live_wiki
+p
+p "Update live wiki..."
+updateLive $workspace$live_wiki $up $down
+status
+p
+p
+p "Commit Changes"
 commit $workspace/FCC-Wiki-Scripts "$message"
+p
+p
 p "Done commititng, time to push!"
 push
 # Keep the windows Open until I press a key
