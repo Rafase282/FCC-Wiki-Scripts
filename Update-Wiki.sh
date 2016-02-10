@@ -62,6 +62,8 @@ function push {
 
 p
 p $message
+p
+p
 commit $workspace/FCC-Wiki-Scripts $message
 p "Done commititng, time to push!"
 push
