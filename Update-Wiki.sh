@@ -56,6 +56,10 @@ function updateLive {
   p Done!
 }
 
+function push {
+  git push
+}
+
 echo "FreeCodeCamp Wiki updater v1"
 echo
 echo "Move to Local Wiki directory at " + $workspace$local_wiki
