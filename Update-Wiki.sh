@@ -78,7 +78,7 @@ p "Update live wiki..."
 updateLive $workspace$live_wiki $up $down
 status
 p
-
+p $message
 commit $workspace/FCC-Wiki-Scripts $message
 p "Done commititng, time to push!"
 push
