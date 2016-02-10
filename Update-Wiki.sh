@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+#
 
 if [ "$1" = "-h" ]; then
      echo "Script to update the local and live version of the FreeCodeCamp wiki"
@@ -24,26 +24,58 @@ configPath=$1
 
 source $configPath
 
+function exit {
+  exit
+}
+
+function p {
+  echo $1
+}
+
+function update {
+  git pull
+}
+
+function status {
+  git status
+}
+
+function commit {
+  cd $1
+  git add .
+  git rm .
+  git commit -m $2
+  p Done!
+}
+
+function updateLive {
+  cd $1
+  git fetch $2
+  git pull $2 $3
+  git push
+  p Done!
+}
+
 echo "FreeCodeCamp Wiki updater v1"
 echo
 echo "Move to Local Wiki directory at " + $workspace$local_wiki
 cd $workspace$local_wiki
 echo
 echo "Updating local repository..."
-git pull
-git status
+update
+status
 echo
-echo "Done!"
+p Done!
 echo "Going to the live Wiki ..."
 cd $workspace$live_wiki
 echo
 echo "Update live wiki..."
-git fetch upstream
-git pull upstream master
-git push
-echo "Done!"
+updateLive $workspace$live_wiki $up $down
+status
 echo
 
+commit $workspace/FCC-Wiki-Scripts $message
+p "Testign a couple of things."
 # Keep the windows Open until I press a key
 echo "Press any key to close this windows..."
 #read -n 1 -s
