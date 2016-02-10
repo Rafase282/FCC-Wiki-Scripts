@@ -9,7 +9,7 @@ local_wiki=wiki
 live_wiki=FreeCodeCamp.wiki
 
 # Commit Message
-message="More progress has been made, this could be changed to say whatever commit message you need. (Automated Message)"
+message='More progress has been made, this could be changed to say whatever commit message you need. (Automated Message)'
 
 # Declare branches
 up=upstream
