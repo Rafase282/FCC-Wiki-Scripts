@@ -1,0 +1,47 @@
+# Edit this file to introduce tasks to be run by cron.
+#
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+#
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').#
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+#
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+#
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#------------------------------------------------------------------------------------------------------#
+#         Entry           |                  Description                               | Equivalent to |
+#-------------------------|------------------------------------------------------------|---------------#
+# @yearly (or @annually)  | Run once a year at midnight of January 1                   | 0 0 1 1 *     |
+# @monthly                | Run once a month at midnight of the first day of the month | 0 0 1 * *     |
+# @weekly                 | Run once a week at midnight on Sunday morning              | 0 0 * * 0     |
+# @daily                  | Run once a day at midnight                                 | 0 0 * * *     |
+# @hourly                 | Run once an hour at the beginning of the hour              | 0 * * * *     |
+# @reboot                 | Run at startup                                             | @reboot       |
+#                         | Run Every minute                                           | */1 * * * *   |
+#------------------------------------------------------------------------------------------------------#
+#
+# ┌───────────── min (0 - 59)
+# │ ┌────────────── hour (0 - 23)
+# │ │ ┌─────────────── day of month (1 - 31)
+# │ │ │ ┌──────────────── month (1 - 12)
+# │ │ │ │ ┌───────────────── day of week (0 - 6) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command to execute
+#
+0 * * * * sh /home/pi/updateFCC-Wiki >> /home/pi/logs/fcc.log
+0 * * * * sh /home/pi/updateMyWiki >> /home/pi/logs/r282.log
+0 0 * * * cat /home/pi/logs/fcc.log > /home/pi/logs/fcc-daily.log && rm /home/pi/logs/fcc.log
+0 0 * * * cat /home/pi/logs/r282.log > /home/pi/logs/r282-daily.log && rm /home/pi/logs/r282.log
+1 0 * * * tar -zcf /home/pi/logs/backups/logs\_`date +20\%y\%m\%d`.tgz /home/pi/logs/*.log
+0 0 1 * * zip /home/pi/logs/backups/logs\_`date +20\%y\%m`.zip /home/pi/logs/backups/*.tgz && rm /home/pi/logs/backups/*.tgz
