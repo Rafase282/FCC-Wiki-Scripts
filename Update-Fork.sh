@@ -8,10 +8,13 @@ echo
 echo "Move to Local Wiki directory at " + $LOCALWIKI
 cd $LOCALWIKI
 echo
+echo Update master
+git checkout master
+git pull
 echo "Sync fork..."
 git fetch $BRANCH
-git rebase -f $BRANCH/master
-git push -f
+git rebase remotes/$BRANCH/master
+git push
 echo "Done!"
 echo
 # Keep the windows Open until I press a key
