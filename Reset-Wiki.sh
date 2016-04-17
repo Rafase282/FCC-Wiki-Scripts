@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Setup paths
-LOCALWIKI="C:\Users\rafas\Documents\wiki"
-BRANCH="FreeCodeCamp"
+LOCALWIKI="C:\Users\rafas\Documents\FreeCodeCamp.wiki"
+BRANCH="upstream"
 echo "Fork Reset v1"
 echo
 echo "Move to Local Wiki directory at " + $LOCALWIKI
