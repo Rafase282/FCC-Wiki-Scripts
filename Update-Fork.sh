@@ -1,8 +1,8 @@
 #!/bin/bash
-
 # Setup paths
 LOCALWIKI="C:\Users\rafas\Documents\wiki"
-BRANCH="upstream"
+REMOTE="FreeCodeCamp"
+BRANCH="master"
 echo "Fork updater v1"
 echo
 echo "Move to Local Wiki directory at " + $LOCALWIKI
@@ -12,8 +12,8 @@ echo Update master
 git checkout master
 git pull
 echo "Sync fork..."
-git fetch $BRANCH
-git rebase remotes/$BRANCH/master
+git fetch $REMOTE
+git rebase remotes/$REMOTE/$BRANCH
 git push
 echo "Done!"
 echo

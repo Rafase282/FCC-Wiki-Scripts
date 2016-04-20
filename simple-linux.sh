@@ -4,6 +4,8 @@
 
 LOCALWIKI="/home/pi/workspace/wiki"
 LIVEWIKI="/home/pi/workspace/FreeCodeCamp.wiki"
+REMOTE="upstream"
+BRANCH="master"
 
 date
 echo "FreeCodeCamp Wiki updater v1"
@@ -20,8 +22,8 @@ echo "Going to the live Wiki ..."
 cd $LIVEWIKI
 echo
 echo "Update live wiki..."
-git fetch upstream
-git pull upstream master
+git fetch $REMOTE
+git pull $REMOTE $BRANCH
 git push
 echo "Done!"
 cd /home/pi/
