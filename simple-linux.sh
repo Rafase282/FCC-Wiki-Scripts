@@ -2,8 +2,8 @@
 # Setup paths for local and live wiki. Upstream must be setup prior to run this script.
 # Author Rafael Rodriguez
 
-LOCALWIKI="/home/pi/workspace/wiki"
-LIVEWIKI="/home/pi/workspace/FreeCodeCamp.wiki"
+LOCALWIKI=~/Workspace/FCC-Wiki
+LIVEWIKI=~/Workspace/FreeCodeCamp.wiki
 REMOTE="upstream"
 BRANCH="master"
 
@@ -26,6 +26,6 @@ git fetch $REMOTE
 git pull $REMOTE $BRANCH
 git push
 echo "Done!"
-cd /home/pi/
+cd ~
 echo
 date
