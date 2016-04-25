@@ -44,4 +44,4 @@
 0 0 * * * cat ~/logs/fcc.log > ~/logs/fcc-daily.log && rm ~/logs/fcc.log
 0 0 * * * cat ~/logs/r282.log > ~/logs/r282-daily.log && rm ~/logs/r282.log
 1 0 * * * tar -zcf ~/logs/backups/logs\_`date +20\%y\%m\%d`.tgz ~/logs/*.log
-0 0 1 * * zip ~/logs/backups/logs\_`date +20\%y\%m`.zip ~/logs/backups/*.tgz && rm /home/pi/logs/backups/*.tgz
+0 0 1 * * zip ~/logs/backups/logs\_`date +20\%y\%m`.zip ~/logs/backups/*.tgz && rm ~/logs/backups/*.tgz
