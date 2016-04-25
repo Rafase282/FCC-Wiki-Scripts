@@ -1,16 +1,18 @@
 #!/bin/bash
-
 # Setup paths
-LOCALWIKI=~/Workspace/FreeCodeCamp.wiki
+LOCALWIKI=~/Workspace/wiki
 REMOTE="upstream"
 BRANCH="master"
-echo "Fork Reset v1"
+echo "Fork updater v1"
 echo
 echo "Move to Local Wiki directory at " + $LOCALWIKI
 cd $LOCALWIKI
 echo
+echo Update master
+git checkout master
+git pull
 echo "Sync fork..."
 git fetch $REMOTE
-git reset --hard $REMOTE/$BRANCH
-git push -f origin $BRANCH
+git rebase $REMOTE/$BRANCH
+git push
 echo "Done!"

@@ -39,9 +39,9 @@
 # │ │ │ │ │
 # * * * * *  command to execute
 #
-0 * * * * sh /home/pi/updateFCC-Wiki >> /home/pi/logs/fcc.log
-0 * * * * sh /home/pi/updateMyWiki >> /home/pi/logs/r282.log
-0 0 * * * cat /home/pi/logs/fcc.log > /home/pi/logs/fcc-daily.log && rm /home/pi/logs/fcc.log
-0 0 * * * cat /home/pi/logs/r282.log > /home/pi/logs/r282-daily.log && rm /home/pi/logs/r282.log
-1 0 * * * tar -zcf /home/pi/logs/backups/logs\_`date +20\%y\%m\%d`.tgz /home/pi/logs/*.log
-0 0 1 * * zip /home/pi/logs/backups/logs\_`date +20\%y\%m`.zip /home/pi/logs/backups/*.tgz && rm /home/pi/logs/backups/*.tgz
+0 * * * * uw >> ~/logs/fcc.log
+0 * * * * umw >> ~/logs/r282.log
+0 0 * * * cat ~/logs/fcc.log > ~/logs/fcc-daily.log && rm ~/logs/fcc.log
+0 0 * * * cat ~/logs/r282.log > ~/logs/r282-daily.log && rm ~/logs/r282.log
+1 0 * * * tar -zcf ~/logs/backups/logs\_`date +20\%y\%m\%d`.tgz ~/logs/*.log
+0 0 1 * * zip ~/logs/backups/logs\_`date +20\%y\%m`.zip ~/logs/backups/*.tgz && rm /home/pi/logs/backups/*.tgz
