@@ -21,7 +21,7 @@ echo "Going to the live Wiki ..."
 cd $LIVEWIKI
 echo
 echo "Update live wiki..."
-git fetch $REMOTE
+git fetch --all --prune
 git pull $REMOTE $BRANCH
 git push
 echo "Done!"

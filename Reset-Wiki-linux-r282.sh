@@ -10,7 +10,7 @@ echo "Move to Local Wiki directory at " + $LOCALWIKI
 cd $LOCALWIKI
 echo
 echo "Sync fork..."
-git fetch $REMOTE
+git fetch --all --prune 
 git reset --hard $REMOTE/$BRANCH
 git push -f origin $BRANCH
 echo "Done!"

@@ -12,7 +12,7 @@ echo Update master
 git checkout master
 git pull
 echo "Sync fork..."
-git fetch $REMOTE
+git fetch --all --prune
 git rebase $REMOTE/$BRANCH
 git push
 echo "Done!"
