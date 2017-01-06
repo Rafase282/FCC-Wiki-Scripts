@@ -1,6 +1,6 @@
 #!/bin/bash
 # Setup paths
-LOCALWIKI=~/Workspace/MyFCCWiki
+LOCALWIKI=~/Workspace/Rafase282/MyFCCWiki
 REMOTE="upstream"
 BRANCH="master"
 echo "Fork updater v1"

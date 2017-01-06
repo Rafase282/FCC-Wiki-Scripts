@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup paths
-LOCALWIKI=~/Workspace/FreeCodeCamp.wiki
+LOCALWIKI=~/Workspace/Rafase282/FreeCodeCamp.wiki
 REMOTE="upstream"
 BRANCH="master"
 echo "Fork Reset v1"

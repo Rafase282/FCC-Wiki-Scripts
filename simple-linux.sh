@@ -2,8 +2,8 @@
 # Setup paths for local and live wiki. Upstream must be setup prior to run this script.
 # Author Rafael Rodriguez
 
-LOCALWIKI=~/Workspace/FCC-Wiki
-LIVEWIKI=~/Workspace/FreeCodeCamp.wiki
+LOCALWIKI=~/Workspace/Rafase282/FCC-Wiki
+LIVEWIKI=~/Workspace/Rafase282/FreeCodeCamp.wiki
 REMOTE="upstream"
 BRANCH="master"
 
